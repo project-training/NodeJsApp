@@ -7,7 +7,11 @@ module.exports.register = (req, res, next) => {
         if (!err) {
             res.status(201).send(doc)
         } else {
-            console.log(err)
+            if (err.code == 11000) {
+                res.status(422).send(err.errmsg)
+            } else {
+                return next(err)
+            }
         }
     })
 }
