@@ -1,14 +1,17 @@
 require('./configs/config')
+require('./configs/passportConfig')
 
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const passport = require('passport')
 
 const rtsUser = require('./routes/user.route')
 
 const app = express()
 app.use(express.json())
 app.use(cors())
+app.use(passport.initialize())
 app.use('/user', rtsUser)
 
 mongoose.connect(process.env.MONGODB_URI, (err) => {
