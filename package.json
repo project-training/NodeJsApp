@@ -1,0 +1,11 @@
+{
+  "name": "nodejsapp",
+  "version": "1.0.0",
+  "description": "Backend Using NodeJs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "angpao1",
+  "license": "ISC"
+}
